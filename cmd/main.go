@@ -1,12 +1,12 @@
 package main
 
 import (
+	"messenger/internal/logger"
 	"messenger/internal/server"
-	"messenger/internal/utils"
 )
 
 func main() {
-	utils.InitLogger()
+	logger.InitLogger()
 	server.InitWebSocket()
 	server.StartServer()
 }
