@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div id="chat-container">
+    <div id="chat-header">
+        <h2>Chat</h2>
+    </div>
+    <div id="messages"></div>
+    <div id="input-container">
+        <input id="message" type="text" placeholder="Type a message..." />
+        <button onclick="sendMessage()">&#10148;</button>
+    </div>
+</div>
+
+<div id="username-modal">
+    <div id="modal-content">
+        <h3>Enter your username</h3>
+        <input id="username" type="text" placeholder="Username" />
+        <button onclick="connect()">Join</button>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

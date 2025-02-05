@@ -1,0 +1,3 @@
+server:
+  port: 8080
+  static_dir: "./web/static"
