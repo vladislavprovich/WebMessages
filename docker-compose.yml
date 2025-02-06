@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  messenger:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: messenger_api
+#    restart: always
+    environment:
+      CONFIG_PATH: "./config/config.yaml"
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./config:/app/config

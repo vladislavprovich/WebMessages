@@ -23,9 +23,14 @@ type LoggerLevel struct {
 func LoadConfig(_ context.Context) (*Config, error) {
 	var cfg Config
 
-	file, err := os.ReadFile("config/config.yaml")
+	configPath := os.Getenv("CONFIG_PATH")
+	if configPath == "" {
+		configPath = "config/config.yaml"
+	}
+
+	file, err := os.ReadFile(configPath)
 	if err != nil {
-		return nil, fmt.Errorf("failed to read config file: %w", err)
+		return nil, fmt.Errorf("failed to read config file (%s): %w", configPath, err)
 	}
 
 	if err = yaml.Unmarshal(file, &cfg); err != nil {
