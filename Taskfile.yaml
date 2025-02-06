@@ -22,7 +22,7 @@ tasks:
     cmds:
       - echo "Checking for security vulnerabilities..."
       - go install golang.org/x/vuln/cmd/govulncheck@latest
-      #      - $env:Path += ";" + (go env GOPATH) + "\bin"  Temporarily adds to PATH
+      #      - $env:Path += ";" + (go env GOPATH) + "\bin"  Temporarily adds to PATH. FOR LOCAL TEST.
       - govulncheck ./...
     silent: false
 
