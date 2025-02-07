@@ -1,0 +1,34 @@
+version: '3'
+
+tasks:
+  start:
+    desc: "Run service"
+    cmds:
+      - echo "Starting service..."
+      - go run cmd/main.go --config=./config/config.yaml
+    ignore_error: true
+    silent: false
+
+  lint:
+      desc: "Run Go linters"
+      cmds:
+        - echo "Running linters..."
+        - go install github.com/golangci/golangci-lint/cmd/golangci-lint@latest
+        - golangci-lint run --timeout=5m
+      silent: false
+
+  vulncheck:
+    desc: "Check for security vulnerabilities"
+    cmds:
+      - echo "Checking for security vulnerabilities..."
+      - go install golang.org/x/vuln/cmd/govulncheck@latest
+      #      - $env:Path += ";" + (go env GOPATH) + "\bin"  Temporarily adds to PATH. FOR LOCAL TEST.
+      - govulncheck ./...
+    silent: false
+
+  fmt:
+    desc: "Format Go code"
+    cmds:
+      - echo "Formatting code..."
+      - gofmt -w .
+    silent: false

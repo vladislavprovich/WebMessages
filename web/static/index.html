@@ -7,14 +7,15 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+
 <div id="chat-container">
     <div id="chat-header">
         <h2>Chat</h2>
     </div>
     <div id="messages"></div>
     <div id="input-container">
-        <input id="message" type="text" placeholder="Type a message..." />
-        <button onclick="sendMessage()">&#10148;</button>
+        <textarea id="message" placeholder="Type a message..." rows="1"></textarea>
+        <button id="send-btn">&#10148;</button>
     </div>
 </div>
 
@@ -22,10 +23,10 @@
     <div id="modal-content">
         <h3>Enter your username</h3>
         <input id="username" type="text" placeholder="Username" />
-        <button onclick="connect()">Join</button>
+        <button id="join-btn">Join</button>
     </div>
 </div>
 
-<script src="script.js"></script>
+<script src="scripts.js"></script>
 </body>
 </html>

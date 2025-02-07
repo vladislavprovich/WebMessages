@@ -1,6 +1,6 @@
 body {
     font-family: 'Arial', sans-serif;
-    background: linear-gradient(to bottom, #fdf497, #fdf497, #fd5949, #d6249f, #285AEB);
+    background: linear-gradient(to bottom, #716e33, #884337, #7c3566, #2e3f71);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -9,8 +9,8 @@ body {
 }
 
 #chat-container {
-    width: 400px;
-    height: 600px;
+    width: 480px;
+    height: 650px;
     background: white;
     display: flex;
     flex-direction: column;
@@ -28,66 +28,81 @@ body {
     border-bottom: 1px solid #ddd;
 }
 
-#logo {
-    width: 30px;
-    margin-right: 10px;
-}
-
 #messages {
     flex: 1;
     padding: 15px;
     overflow-y: auto;
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 8px;
+}
+
+.message-container {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    max-width: 100%;
+}
+
+.message-container.self {
+    flex-direction: row-reverse;
+}
+
+.avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    flex-shrink: 0;
 }
 
 .message {
-    max-width: 75%;
-    padding: 12px;
-    border-radius: 18px;
+    max-width: 70%;
+    padding: 10px;
+    border-radius: 12px;
     font-size: 14px;
     line-height: 1.4;
     word-wrap: break-word;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-.message.other {
-    background-color: #efefef;
-    align-self: flex-start;
-    border-radius: 18px 18px 18px 5px;
+    overflow-wrap: break-word;
+    word-break: break-word;
+    position: relative;
 }
 
 .message.self {
     background-color: #007AFF;
     color: white;
+    border-radius: 12px 12px 0px 12px;
     align-self: flex-end;
-    border-radius: 18px 18px 5px 18px;
 }
 
-.avatar {
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-    background: gray;
+.message.other {
+    background-color: #f0f0f0;
+    color: black;
+    border-radius: 12px 12px 12px 0px;
 }
 
-.username {
+.message .username {
     font-size: 12px;
     font-weight: bold;
-    margin-bottom: 5px;
+    color: #444;
+    margin-bottom: 2px;
+    display: block;
 }
 
 #input-container {
     display: flex;
+    align-items: center;
     padding: 10px;
     background: white;
     border-top: 1px solid #ddd;
 }
 
-#input-container input {
+#input-container textarea {
     flex: 1;
     padding: 10px;
     border: none;
@@ -95,6 +110,10 @@ body {
     font-size: 14px;
     outline: none;
     background: #f0f0f0;
+    resize: none;
+    min-height: 40px;
+    max-height: 100px;
+    overflow-y: auto;
 }
 
 #input-container button {
@@ -106,6 +125,7 @@ body {
     margin-left: 10px;
     cursor: pointer;
     font-size: 18px;
+    flex-shrink: 0;
 }
 
 #username-modal {
@@ -125,4 +145,35 @@ body {
     padding: 20px;
     border-radius: 10px;
     text-align: center;
+    width: 300px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+#modal-content h3 {
+    margin-bottom: 15px;
+}
+
+#username {
+    width: 90%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+#join-btn {
+    background: #007AFF;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    width: 100%;
+}
+
+#join-btn:hover {
+    background: #005ecb;
 }

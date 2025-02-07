@@ -1,3 +1,5 @@
+LOG_LEVEL: "debug"
 server:
-  port: 8080
+  SERVER_PORT: "8080"
   static_dir: "./web/static"
+  BASE_URL: "http://localhost:8080"
